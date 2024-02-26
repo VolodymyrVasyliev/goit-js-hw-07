@@ -13,6 +13,7 @@ const boxesContainer = document.querySelector('#boxes');
 createBtn.addEventListener('click', () => {
   const amount = parseInt(input.value);
   if (amount > 0 && amount <= 100) {
+    destroyBoxes(); 
     createBoxes(amount);
     input.value = '';
   } else {
@@ -38,10 +39,5 @@ function destroyBoxes() {
   boxesContainer.innerHTML = '';
 }
 
-const btnC = document.querySelector('button');
-btnC.classList.add('btn-c');
-const btnD = document.querySelectorAll('button');
-if (btnD.length >= 2) {
-  const secondBtn = btnD[1];
-  secondBtn.classList.add('btn-d');
-}
+createBtn.classList.add('btn-c');
+destroyBtn.classList.add('btn-d');
